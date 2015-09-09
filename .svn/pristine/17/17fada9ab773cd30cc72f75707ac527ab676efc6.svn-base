@@ -1,0 +1,133 @@
+@import 'login.scss';
+@import 'statistics.scss';
+@import 'detail.scss';
+@import 'pro-list.scss';
+@import 'pro-sale.scss';
+@import 'profeature.scss';
+@import 'store-list.scss';
+@import 'free.scss';
+@import 'work_detail.scss';
+
+.bcp-backbutton {
+  background-image: url(../icons/bcp_back.png);
+}
+
+.bcp-commitbutton {
+  background-image: url(../icons/bcp_commit_btn.png);
+}
+
+.bcp-closebutton {
+  background-image: url(../icons/bcp_close.png);
+}
+
+.more_app_item{
+  width: 25%;
+  height: 6em;
+}
+
+.et-list {
+
+  background-color: #999;
+
+  .x-list-item.x-list-item-tpl {
+    .x-innerhtml {
+      padding: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .et-box-select.x-list-item {
+    .x-innerhtml {
+      background: red;
+    }
+  }
+
+  .x-list-item.x-list-item-tpl {
+    border-top: none;
+  }
+
+  .x-list-item.x-list-item-tpl.x-list-footer-wrap {
+    border-bottom: none;
+  }
+
+  .avatar {
+    position: absolute;
+    width: $avatar-width;
+    height: $avatar-width;
+    background-color: red;
+    
+  }
+
+  .content {
+    padding-left: $avatar-width;
+    background-color: #f7f7f7;
+    height: $avatar-width;
+  }
+}
+
+.message{
+  .x-mask-inner {
+    background-color: Black;
+    opacity: 0.8;
+    font-size: 0.9em;
+    border-radius: 0.3em;
+    top: 7.5em;
+  }
+  .x-mask-message {
+    color: white;
+    padding: 0.3em 0.3em 0.1em 0.3em;
+  }
+}
+
+.showwork{
+  .wrapper {
+    .skin {
+      display: inline;
+    }
+    .img {
+        display: inline-block;
+        vertical-align: top;
+        width: 3em;
+        height: 3em;
+    }
+    .pith {
+      display: inline-block;
+      vertical-align: middle;
+      width:80%;
+    }
+    .pith .usersinfo {
+      color:#333333;
+    }
+    .avatar {
+      width:6em;
+      height:5em;
+      margin:0.2em 0.3em;
+    }
+    .name-padding {
+       padding-left: 0.2em;
+       font-size:0.8em;
+       font-weight:bold;
+       color:#4682B4;
+    }
+      .refcus_name-padding {
+      font-size:0.6em;
+      color:#4682B4;
+    }
+    .date-padding{
+      font-size:0.1em;
+      color:#838B8B;
+      }
+      .visit-padding{
+      font-size:0.6em;
+      line-height: 180%;
+      color:#838B8B;
+      }
+    .padding-dis {
+      padding-left:0.8em;
+    }
+    .button-style{
+      padding-right:0.1em;
+      font-size:0.7em;
+    }
+  }
+}

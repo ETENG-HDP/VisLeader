@@ -1,0 +1,21 @@
+.profeature {
+	input {
+		color: white !important;
+		text-align: center;
+	}
+	*::-webkit-input-placeholder {
+	    color: red;
+	}
+	*:-moz-placeholder {
+	    /* FF 4-18 */
+	    color: red;
+	}
+	*::-moz-placeholder {
+	    /* FF 19+ */
+	    color: red;
+	}
+	*:-ms-input-placeholder {
+	    /* IE 10+ */
+	    color: red;
+	}
+}

@@ -1,0 +1,52 @@
+.product.x-list .x-list-item.x-list-item-tpl .x-innerhtml {
+	padding: 0px;
+
+	.x-list .x-list-inner {
+		background-color: white;
+	}
+
+	.wrapper {
+		padding: 0.3em;
+		display: table;
+		width: 100%;
+
+		.avatar {
+			width: 6em;
+			height: 4em;
+		}
+
+		.inner {
+			display: table-cell;
+			vertical-align: middle;
+			width: 6em;
+		}
+
+		.store {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 0.3em;
+		}
+
+		.store .recipe {
+			font-size: 18px;
+			color: #4a4a4a;
+			margin-bottom: 0.3em;
+		}
+
+		.store >span {
+			font-size: 14px;
+			color: #6d6c6c;	
+		}
+
+	}
+}
+
+.produce {
+	.x-dock-body {
+		margin: 0.3em;
+	}
+
+	.items {
+		border-bottom: 0px !important;
+	}
+}

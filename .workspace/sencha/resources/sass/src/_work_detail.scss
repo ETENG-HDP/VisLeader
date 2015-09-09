@@ -1,0 +1,51 @@
+.showwork{
+	.wrapper {
+		.skin {
+			display: inline;
+		}
+		.pith {
+			display: inline-block;
+			vertical-align: middle;
+			width:80%;
+		}
+		.pith .usersinfo {
+			color:#333333;
+		}
+		.img {
+			width: 3em;
+			height: 3em;
+			vertical-align: top;
+		}
+		.avatar {
+			width:6em;
+			height:5em;
+	        margin:0.2em 0.3em;
+		}
+		.name-padding {
+			 padding-left: 0.2em;
+			 font-size:0.8em;
+			 font-weight:bold;
+			 color:#4682B4;
+		}
+	    .refcus_name-padding {
+			font-size:0.6em;
+			color:#4682B4;
+		}
+		.date-padding{
+			font-size:0.1em;
+			color:#838B8B;
+	    }
+	    .visit-padding{
+			font-size:0.6em;
+			line-height: 180%;
+			color:#838B8B;
+	    }
+		.padding-dis {
+			padding-left:0.8em;
+		}
+		.button-style{
+			padding-right:0.1em;
+			font-size:0.7em;
+		}
+	}
+}

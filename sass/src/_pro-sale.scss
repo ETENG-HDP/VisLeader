@@ -1,0 +1,44 @@
+.product {
+	padding: 3px 5px;
+
+	.prosale {
+		padding: 0.5em 0.3em;
+	}
+
+	.prosale .title {
+		display: block;
+	}
+	.prosale .title .pro_name,.pro_sale,.pro_block {
+		width: 60%;
+		display: inline-block;
+	}
+
+	.pro_block {
+		width: 0.5em; 
+		height: 0.5em; 
+		background-color: #f40;
+		float: left;
+		margin: 0.4em;
+	}
+
+	.pro_sale {
+		width: 25%;
+		padding-left: 3px;
+		color: rgb(255, 68, 0);
+	}
+
+	.prosale .block {
+		margin-top: 0.5em;
+		height: 1.1em;
+		width: 100%;
+		background-color: #cfcfcf;
+		border-radius: 0.6em;
+	}
+
+	.prosale .block .percent {
+		height: 1.1em;
+		display: block;
+		background-color: #93D774;
+		border-radius: 0.6em;
+	}
+}

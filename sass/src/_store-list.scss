@@ -1,0 +1,51 @@
+.store-list {
+	.x-dock-body {
+		margin: 0.3em;
+	}
+
+	.items {
+		border-bottom: 0px !important;
+		background-color: white;
+	}
+
+	.icon {
+		display: inline;
+		text-align: center;
+	}
+
+	.avatar {
+		width: 18%;
+		height: 36px;
+		padding-right: 6%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.sub {
+		width: 82%;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+	}
+}
+
+.applicationPhotoWall{
+	margin:0em 0em 0em 0.5em;
+	width: 5.5em; 
+	height: 5.5em;
+	x-scroll-view {
+		.x-form .x-scroll-container {
+			background-color: none;
+		}
+	}
+	.backgruond-complain {
+		.x-form .x-scroll-container {
+			background-color: none;
+		}
+	}
+}
+
+.text-size-eight{
+	font-size:0.8em;
+}
+
