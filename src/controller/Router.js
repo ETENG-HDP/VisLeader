@@ -5,6 +5,8 @@
   	'{{app "util.CssTransition"}}',
     '{{app "view.PhotoView"}}',
     '{{view "showwork.WorkDetailsView"}}',
+    '{{app "util.PaintMonitor"}}',
+    '{{app "util.SizeMonitor"}}',
     '{{view "showwork.Center"}}'
     //'BcpBoss.view.showwork.Center',
   ],

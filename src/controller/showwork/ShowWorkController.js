@@ -86,7 +86,7 @@
 			region_id = record_by_name.getData().region_id;
 			if(region_id=="01"){
 				ETFramework.Backend.request({
-		    		bo: 'et.bcp.showwork.ShowWorkBO',
+		    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 		    		params: {
 		    			action: 'boss_visit_query',
 		    			user_id: localStorage.user_id,
@@ -135,7 +135,7 @@
 		    	});
 			}else{
 				ETFramework.Backend.request({
-	        		bo: 'et.bcp.showwork.ShowWorkBO',
+	        		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 	        		params: {
 	        			action: 'region_visit_query',
 	        			region_id: region_id,
@@ -185,7 +185,7 @@
 			}
 		}else{
 			ETFramework.Backend.request({
-	    		bo: 'et.bcp.showwork.ShowWorkBO',
+	    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 	    		params: {
 	    			action: 'boss_visit_query',
 	    			user_id: localStorage.user_id,
@@ -234,7 +234,7 @@
 	    	});
 		}
 		 ETFramework.Backend.request({
-         	bo: 'et.bcp.showwork.ShowWorkBO',
+         	bo: 'et.bcp.leader.showwork.ShowWorkBO',
          	params: {
          		action: 'boss_center_query',
          		user_id: localStorage.user_id,
@@ -273,7 +273,7 @@
 			region_id = record_by_name.getData().region_id;
 			if(region_id=="01"){
 				ETFramework.Backend.request({
-		    		bo: 'et.bcp.showwork.ShowWorkBO',
+		    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 		    		params: {
 		    			action: 'boss_visit_query',
 		    			user_id: localStorage.user_id,
@@ -322,7 +322,7 @@
 		    	});
 			}else{
 				ETFramework.Backend.request({
-		    		bo: 'et.bcp.showwork.ShowWorkBO',
+		    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 		    		params: {
 		    			action: 'region_visit_query',
 	        			region_id: region_id,
@@ -372,7 +372,7 @@
 			}
 		}else{
 			ETFramework.Backend.request({
-	    		bo: 'et.bcp.showwork.ShowWorkBO',
+	    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 	    		params: {
 	    			action: 'boss_visit_query',
 	    			user_id: localStorage.user_id,
@@ -424,7 +424,7 @@
     },
     searchCenter:function(){
     	 ETFramework.Backend.request({
-         	bo: 'et.bcp.showwork.ShowWorkBO',
+         	bo: 'et.bcp.leader.showwork.ShowWorkBO',
          	params: {
          		action: 'boss_center_query',
          		user_id: localStorage.user_id,
@@ -463,7 +463,7 @@
 			region_id = record_by_name.getData().region_id;
 			if(region_id=="01"){
 				ETFramework.Backend.request({
-		    		bo: 'et.bcp.showwork.ShowWorkBO',
+		    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 		    		params: {
 		    			action: 'boss_visit_query',
 		    			user_id: localStorage.user_id,
@@ -512,7 +512,7 @@
 		    	});
 			}else{
 				ETFramework.Backend.request({
-	        		bo: 'et.bcp.showwork.ShowWorkBO',
+	        		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 	        		params: {
 	        			action: 'region_visit_query',
 	        			region_id: region_id,
@@ -562,7 +562,7 @@
 			}
 		}else{
 			ETFramework.Backend.request({
-	    		bo: 'et.bcp.showwork.ShowWorkBO',
+	    		bo: 'et.bcp.leader.showwork.ShowWorkBO',
 	    		params: {
 	    			action: 'boss_visit_query',
 	    			user_id: localStorage.user_id,
@@ -651,7 +651,7 @@
      */
     maintolengthCenter:function(length,mark){
     	ETFramework.Backend.request({
-          	bo: 'et.bcp.showwork.ShowWorkBO',
+          	bo: 'et.bcp.leader.showwork.ShowWorkBO',
           	params: {
           		action: 'boss_region_query',
           		user_id: localStorage.user_id,
@@ -679,7 +679,7 @@
 //    		this.redirectTo('bcp/center');
     	}else{
     		ETFramework.Backend.request({
-              	bo: 'et.bcp.showwork.ShowWorkBO',
+              	bo: 'et.bcp.leader.showwork.ShowWorkBO',
               	params: {
               		action: 'boss_region_query',
               		user_id: localStorage.user_id,
@@ -711,7 +711,7 @@
     	var centerStore = Ext.StoreMgr.lookup("showCenterStoreId");
     	centerStore.removeAll();
     	ETFramework.Backend.request({
-          	bo: 'et.bcp.showwork.ShowWorkBO',
+          	bo: 'et.bcp.leader.showwork.ShowWorkBO',
           	params: {
           		action: 'boss_region_query',
           		user_id: localStorage.user_id,
@@ -742,7 +742,7 @@
     	Ext.Viewport.query('img[action=selectCenter]')[0].setHtml(name);
     	if(record.region_id=="01"){
     		ETFramework.Backend.request({
-        		bo: 'et.bcp.showwork.ShowWorkBO',
+        		bo: 'et.bcp.leader.showwork.ShowWorkBO',
         		params: {
         			action: 'boss_visit_query',
         			user_id: localStorage.user_id,
@@ -791,7 +791,7 @@
         	});
     	}else{
     		ETFramework.Backend.request({
-        		bo: 'et.bcp.showwork.ShowWorkBO',
+        		bo: 'et.bcp.leader.showwork.ShowWorkBO',
         		params: {
         			action: 'region_visit_query',
         			region_id: record.region_id,
