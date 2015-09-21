@@ -24,12 +24,12 @@
   	},
 		data: [{
 			item_id: '000010001',
-			item_name: '业务中心月销量排行',
+			item_name: '业务区域月销量排行',
 			img_url: 'resources/images/region_sale.png',
 			item_type: 'regionsell'
 		}, {
 			item_id: '000010002',
-			item_name: '业务中心月任务完成率排行',
+			item_name: '业务区域月任务完成率排行',
 			img_url: 'resources/images/region_per.png',
 			item_type: 'regionrate'
 		}, {

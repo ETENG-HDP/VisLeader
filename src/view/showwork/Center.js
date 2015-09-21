@@ -46,7 +46,7 @@
 			name:'center_tb',
 			ui: 'light',
 			docked: 'top',
-			title:'所有中心',
+			title:'所有区域',
 			items:[
 				{
 					xtype: 'button',

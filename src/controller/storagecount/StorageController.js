@@ -49,9 +49,9 @@
           if(message.length != null) {
             message.forEach(function(data) {
               proids.push(data.region_id);
-              data.previous_sales = '0.00t';
-              data.sales_num = data.sales_num + 't';
-              data.tasknum = data.tasknum + 't';
+              data.previous_sales = '0.00';
+              data.sales_num = data.sales_num + '';
+              data.tasknum = data.tasknum + '';
               store.add(data);
             })
 
@@ -145,7 +145,8 @@
         var response = Ext.decode(args.responseText);
         for(res in response){
           var value = store.findRecord('region_id', res);
-          value.getData().previous_sales = response[res]+'t';
+          //value.getData().previous_sales = response[res]+'t';
+          value.getData().previous_sales = response[res]+'';
         }
         store.fireEvent('refresh');//用于刷新store
       }

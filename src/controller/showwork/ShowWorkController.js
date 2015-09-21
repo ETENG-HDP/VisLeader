@@ -255,7 +255,7 @@
          			var name = localStorage.user_name;	
          			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml(name);
          		}else{
-         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有中心");
+         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有区域");
          		}
          			
          		console.log(arguments);
@@ -279,7 +279,7 @@
 		    			user_id: localStorage.user_id,
 		    			corp_id: localStorage.corp_id,
 		    		    start_num:length,
-				        row_num:5  
+				        row_num:10  
 		    		},
 		    		callback: function(err, flag, message, visitBVO) {
 		    			var visitStore = Ext.StoreMgr.lookup("workDetailsStoreId");
@@ -445,7 +445,7 @@
          			var name = localStorage.user_name;	
          			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml(name);
          		}else{
-         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有中心");
+         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有区域");
          		}
          			
          			
@@ -692,7 +692,7 @@
               		}else if(flag=="true"){
               			var all={
               				region_id:'01',
-              				region_name:'所有中心'
+              				region_name:'所有区域'
               			};
               			centerStore.add(all);
               			centerStore.add(message);
@@ -726,7 +726,7 @@
           		}else if(flag=="true"){
           			var all={
               				region_id:'01',
-              				region_name:'所有中心'
+              				region_name:'所有区域'
               			};
               			centerStore.add(all);
           			centerStore.add(message);
