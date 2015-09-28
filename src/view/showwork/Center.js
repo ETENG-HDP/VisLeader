@@ -46,7 +46,7 @@
 			name:'center_tb',
 			ui: 'light',
 			docked: 'top',
-			title:'所有区域',
+			title:'所有营销组织',
 			items:[
 				{
 					xtype: 'button',
@@ -81,7 +81,7 @@
 			}],
 			itemTpl:['<div>',
 		      			'<dl style="height:1.5em">',
-		    				'<dt><img src="resources/icons/cangku_15.png" style="float:left;width:2.2em;height:2.5em;margin-top:-0.5em;"></dt>',
+		    				'<dt><img src="resources/images/zuzhi.png" style="float:left;width:2.2em;height:2.2em;margin-top:-0.5em;"></dt>',
 		    				'<dd style="float:left;margin-left:0.5em">',
 		    					'<p class="text-size-small"  style="margin-top:0.2em">{region_name}</p>',
 		    				'</dd>',

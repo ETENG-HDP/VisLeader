@@ -6,7 +6,10 @@
 	  			registRegion: 'registRegion',
 	  			login: 'handleLogin',
 	  			signup: 'handleSignUp',
-	  			appinit: 'appinit'
+	  			appinit: 'appinit',
+	  			selectDis: 'selectDis',
+	  			chooseDis: 'chooseDis',
+	  			changeUser: 'changeUser'
 	  		},
 	  		refs: {
 	  			newButton: 'button[action=newurl]',
@@ -26,13 +29,16 @@
 	},
 
 	//登录方法
-    handleLogin: function(usernameProxy, passwordProxy) {
+    handleLogin: function(usernameProxy, passwordProxy, corpcodeProxy) {
 
 	    if(usernameProxy == '') {
 	        Toast.toast('账号信息不能为空');
 	        return;
 	    } else if(passwordProxy == '') {  
 	        Toast.toast('密码信息不能为空');
+	        return;
+	    } else if(corpcodeProxy == ''){
+	    	Toast.toast('公司code信息不能为空');
 	        return;
 	    }
 
@@ -47,7 +53,8 @@
 			params: {
 				action: 'pubLogin',
 				account_code: usernameProxy,
-				account_password: passwordProxy
+				account_password: passwordProxy,
+				account_corp: corpcodeProxy
 			},
 			callback: function(err,flag,userObj) {
 				if(err){
@@ -55,7 +62,7 @@
 					Toast.toast('请检查网路')
 				}else{
 					if(flag=='true'||flag=="true"||flag==true){
-						console.log(userObj);
+						console.log(arguments);
 						if((localStorage.user_id == userObj[0]) || !localStorage.user_id){							
 							localStorage.user_id=userObj[0];
 							localStorage.user_name=userObj[1];//姓名
@@ -63,8 +70,9 @@
 							localStorage.storegroup=userObj[3];//库存组织;
 							localStorage.user_code=usernameProxy;//账号
 							localStorage.username=usernameProxy;//用户名
-							localStorage.password=passwordProxy;//密码
-							localStorage.identity_type = userObj[4];//业代的类型  自销或贸易  该字段对应产品品牌的自销和贸易字段
+//							localStorage.password=passwordProxy;//密码
+							localStorage.identity_type = userObj[4];
+							localStorage.password = userObj[5];//token
 							this.cancelMask();
 							Toast.toast('欢迎'+userObj[1]+'登录', 1000);
 							this.enter(false);
@@ -81,7 +89,8 @@
 									localStorage.user_code=usernameProxy;//账号
 									localStorage.username=usernameProxy;//用户名
 									localStorage.password=passwordProxy;//密码
-									localStorage.identity_type = userObj[4];//业代的类型  自销或贸易  该字段对应产品品牌的自销和贸易字段
+									localStorage.identity_type = userObj[4];
+									localStorage.password = userObj[5];//token
 									this.cancelMask();
 									Toast.toast('欢迎'+userObj[1]+'登录', 1000);
 									this.enter(false);
@@ -101,7 +110,60 @@
 		});
 
     },
+  //注册查询区域
+	selectDis: function() {
+		var sel = this;
+		console.log('------------');
+		this.request({//暂时走BOSS系统
+			//url: bcpConfig.loginURL + '/servlet/MobileSubmitAction',
+			bo: 'et.bcp.leader.Region.RegionBO',
+			params: {
+				action: 'query',
+				user_corp_id: bcpConfig.appcorpid //应用的id,不同公司不同,对应公司的corp_id,测试公司0002
+			},
+			callback: function(err, flag, message) {
+				console.log(arguments);
+				if(err != null) {
 
+				}else if(flag == 'true' || flag && message != 'undefined' && message != null) {
+					var store = Ext.StoreMgr.lookup('selectDisStore');	
+					store.removeAll();
+					store.add(message);
+					sel.redirectTo('bcp/selectdis');
+				}else {//没有数据   提示
+					//Toast.toast(message);
+				}
+			}
+		})
+	},
+	chooseDis: function(record){
+		var cho = this;
+		this.request({
+			bo: 'et.bcp.leader.Region.RegionBO',
+			params: {
+				action: 'save_re_user_reg',
+				user_corp_id: bcpConfig.appcorpid,
+				user_id: localStorage.user_id,
+				reg_id: record.getData().region_id
+			},
+			callback: function(err, flag, message) {
+				console.log(arguments);
+				if(err != null) {
+					
+				}else{
+					if(flag == 'true') {
+						localStorage.identity_type = record.getData().region_id;
+						cho.redirectTo('main');
+			    	    Ext.Viewport.fireEvent('appinit');
+//						cho.redirectTo('');
+					}else {//没有数据   提示
+					//Toast.toast(message);
+				}
+				} 
+			}
+		})
+	},
+    
 	//注册时查询区域的方法
 	registRegion: function() {
 		this.request({//暂时走BOSS系统
@@ -117,7 +179,8 @@
 
 				}else if(flag == 'true' || flag && message != 'undefined' && message != null) {
 					Ext.Viewport.fireEvent('signup');
-					var store = Ext.StoreMgr.lookup('registregionstore');					if(store.getAllCount !=0) {
+					var store = Ext.StoreMgr.lookup('registregionstore');					
+					if(store.getAllCount !=0) {
 						store.removeAll();
 					}
 
@@ -181,10 +244,12 @@
 	
 	/*注册方法*/
 	registuser: function() {
+		var reg = this;
 		var view = Ext.Viewport.query('signup')[0];
 		var account = view.down('numberfield[name=phone]').getValue();
 		var password = view.down('passwordfield[name=password]').getValue();
 		var repassword = view.down('passwordfield[name=repassword]').getValue();
+		var corpcode = view.down('textfield[name=recorpcode]').getValue();
 		// var region = view.down('selectfield[name=region]').getValue();
 		/*手机号码验证  由于使用的是numberfield这里不允许出现“+”号，若允许，则可以使用textfield*/
 		// var re = /^(13[0-9]|15[012356789]|18[0-9]|14[57])[0-9]{8}$/g;
@@ -202,6 +267,10 @@
 			Toast.toast('密码不能为空', 2000);
 			return;
 		}
+		if(corpcode.trim() == "" || corpcode == null ) {
+			Toast.toast('code不能为空', 2000);
+			return;
+		}
 		/*密码验证*/
 		if(repassword != password) {
 			Toast.toast('密码不一致', 2000);
@@ -209,7 +278,7 @@
 		}
 
 		//提交数据
-		this.request({
+		reg.request({
 			url: bcpConfig.loginURL + '/servlet/MobileSubmitAction',
 			bo: 'et.bcp.leader.account.AccountBO',
 			params: {
@@ -217,11 +286,12 @@
 				phone_num: account,
 				account_password: password,
 				// region_id: region,
-				user_corp_id: localStorage.corp_id
+				user_corp_id: localStorage.corp_id,
+				account_corp: corpcode
 			},
 			
 			callback: function(err, state, message) {
-				console.log(message);
+				console.log(arguments);
 				if(err != null) {
 					Toast.toast('请检查网络', 1000);
 				} else {
@@ -235,12 +305,12 @@
 //						localStorage.storegroup= message[3]//库存组织;
 						localStorage.user_code = account; //用户编码
 						localStorage.username = account;//账号 (平台用)
-						localStorage.password = password;//密码(平台用)
-						localStorage.identity_type = message[3];//人员类型 仓库，中心经理，营销中心人员，业代(自销和贸易)
-						
+//						localStorage.password = password;//密码(平台用)
+//						localStorage.identity_type = message[3];//人员类型 仓库，中心经理，营销中心人员，业代(自销和贸易)
+						localStorage.password = message[4];
 						Toast.toast('注册成功', 1000);
-						this.enter(false);
-						this.redirectTo('');
+						reg.enter(false);
+						reg.redirectTo('');
 					} else if(state == "false" || !state){
 						Toast.toast(message, 2000);
 					}
@@ -264,7 +334,17 @@
 		this.redirectTo('bcp/updateurl');
 		Ext.Viewport.query('updateUrl')[0].setData({toView:activeItem});
 	},
-	
+	/*
+	 * 用户失效
+	 * */
+	changeUser: function(){
+		delete localStorage.user_id;
+		delete localStorage.user_name;
+		delete localStorage.user_code;
+		delete localStorage.username;
+		this.redirectTo('signin');
+		Toast.toast('登录信息已失效，请重新登录！', 2000);
+	},
 	loginUrl: function(){
 		var myurl = this.getMynewUrl().getValue();
 		var storeUrl = this.getStoreUrl().getValue();

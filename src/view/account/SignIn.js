@@ -23,6 +23,12 @@
         xtype: 'fieldset',
         items: [
           {
+		    xtype: 'textfield',
+		    name: 'corpcode',
+		    label: '公司账号',
+		    placeHolder: '请输入您的公司账号'
+		  },
+          {
             xtype: 'textfield',
             name: 'username',
             label: '用户名',
@@ -59,7 +65,7 @@
             handler:function(){
               form = this.up('signin');
               message = form.getValues();
-              Ext.Viewport.fireEvent ('login', message.username, message.password);
+              Ext.Viewport.fireEvent ('login', message.username, message.password,message.corpcode);
             }
           }
         ]

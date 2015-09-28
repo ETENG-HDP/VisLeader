@@ -255,7 +255,7 @@
          			var name = localStorage.user_name;	
          			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml(name);
          		}else{
-         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有区域");
+         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有营销组织");
          		}
          			
          		console.log(arguments);
@@ -445,7 +445,7 @@
          			var name = localStorage.user_name;	
          			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml(name);
          		}else{
-         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有区域");
+         			Ext.Viewport.query('img[action=selectCenter]')[0].setHtml("所有营销组织");
          		}
          			
          			
@@ -692,7 +692,7 @@
               		}else if(flag=="true"){
               			var all={
               				region_id:'01',
-              				region_name:'所有区域'
+              				region_name:'所有营销组织'
               			};
               			centerStore.add(all);
               			centerStore.add(message);
@@ -726,7 +726,7 @@
           		}else if(flag=="true"){
           			var all={
               				region_id:'01',
-              				region_name:'所有区域'
+              				region_name:'所有营销组织'
               			};
               			centerStore.add(all);
           			centerStore.add(message);

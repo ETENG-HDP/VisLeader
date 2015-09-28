@@ -7,7 +7,8 @@
     '{{view "showwork.WorkDetailsView"}}',
     '{{app "util.PaintMonitor"}}',
     '{{app "util.SizeMonitor"}}',
-    '{{view "showwork.Center"}}'
+    '{{view "showwork.Center"}}',
+    '{{view "account.SelectDis"}}'
     //'BcpBoss.view.showwork.Center',
   ],
   config:{
@@ -48,7 +49,8 @@
       'bcp/freeexecute': 'freeExecute',
       'bcp/workdetailsview': 'workDetailsView',
       'bcp/updateurl':'updateUrl',
-      'bcp/center':'center'
+      'bcp/center':'center',
+      'bcp/selectdis':'selectdis',
     }
   },
 
@@ -133,8 +135,12 @@
       }
     }
     if (this.signIn()){
-      this.redirectTo('main');
-      Ext.Viewport.fireEvent('appinit');
+    	if(localStorage.identity_type){
+    		this.redirectTo('main');
+    	      Ext.Viewport.fireEvent('appinit');
+    	}else{
+    		Ext.Viewport.fireEvent('selectDis');
+    	}
     }else{
       this.redirectTo('signin');
     }
@@ -175,6 +181,9 @@
   },
   center: function(){
 	this.jumpTo("center");  
+  },
+  selectdis: function(){
+	  this.jumpTo("selectdis");  
   },
   jumpTo: function(xtype) {
     var error;

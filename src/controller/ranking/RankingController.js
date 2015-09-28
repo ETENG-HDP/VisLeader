@@ -145,7 +145,7 @@
 				} else {//提示待添加
 				  Toast.toast('本月暂无要查询的数据');
 				}
-				this.setTitle('中心销量');
+				this.setTitle('营销组织销量');
 		  },
 		  scope: this
 		})
@@ -177,7 +177,7 @@
 				} else{
 					Toast.toast('没有要查询的数据');
 				}
-				this.setTitle('中心任务完成率');
+				this.setTitle('营销组织任务完成率');
 			},
 			scope: this
 		})

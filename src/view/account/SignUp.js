@@ -27,6 +27,12 @@
 	  				history.back();
 	  			}
 	  		}]
+	  	},{
+	  		xtype: 'textfield',
+	  		label: '公司账号：',
+	  		placeHolder: '输入公司账号',
+	  		margin: '0.3em 0.3em 0em 0.3em',
+	  		name: 'recorpcode'
 	  	}, {
 
 	  		xtype: 'numberfield',
@@ -46,7 +52,7 @@
 	  		placeHolder: '请确认密码',
 	  		margin: '0.3em 0.3em 0em 0.3em',
 	  		name: 'repassword'
-	  	}, 
+	  	},
 	  // 	{
 	  // 		xtype: 'selectfield',
 	  // 		label: '所属组织：',
