@@ -29,7 +29,7 @@
       params: {
         action: 'regionYearBilv',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
 
       callback: function(err, flag, message) {
@@ -68,7 +68,7 @@
       params: {
         action: 'regionMonthBilv',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
 
       callback: function(err, flag, message) {
@@ -107,7 +107,7 @@
       params: {
         action: 'regionMonthOpenQuantity',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
 
       callback: function(err, flag, message) {
@@ -156,7 +156,7 @@
       params: {
         action: 'regionweekOpenQuantity',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
 
       callback: function(err, flag, message) {
@@ -206,7 +206,7 @@
       params: {
         action: 'moredayopenquantity',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
       callback: function(err, flag, message) {
         if(err != null) {
@@ -254,7 +254,7 @@
       params: {
         action: 'monthTaskAndSales',
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
 
       callback: function(err, flag, message) {
@@ -292,7 +292,7 @@
   		params: {
   		  action: 'dayResult',
         user_id: localStorage.user_id,
-  		  corp_id:  bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+  		  corp_id:  localStorage.corp_id
   		},
   		callback: function(err, flag, message) {
         if(err != null) {//网络异常
@@ -336,7 +336,7 @@
   	  params: {
   	  	action: 'leaderMianResult',
         user_id: localStorage.user_id,
-		    corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+		    corp_id: localStorage.corp_id
   	  },
   	  callback: function(err, flag) {
         console.log(arguments);

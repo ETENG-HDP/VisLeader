@@ -21,7 +21,7 @@
   		params: {
   			action: 'personSaleRanking',
 				user_id: localStorage.user_id,
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+				corp_id: localStorage.corp_id
   		},
   		callback: function(err, flag, message1, message2) {
   			var store = this.getStore();
@@ -71,7 +71,7 @@
 			params: {
 				action: 'personBilvRanking',
 				user_id: localStorage.user_id,
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+				corp_id: localStorage.corp_id
 			},
 			callback: function(err, flag, message1, message2) {
 				var store = this.getStore();
@@ -121,7 +121,7 @@
 		  params: {
 				action: 'regionSaleRanking',
 				user_id: localStorage.user_id,
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+				corp_id: localStorage.corp_id
 		  },
 		  callback: function(err, flag, message) {
 		  	var store = this.getStore();
@@ -157,7 +157,7 @@
 			bo: 'et.bcp.leader.ranking.bo.RankingBo',
 		  params: {
 				action: 'regionSaleBilvRanking',
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc',
+				corp_id: localStorage.corp_id,
 		  		user_id: localStorage.user_id
 		  },
 			callback: function(err, flag, message) {
@@ -191,7 +191,7 @@
 			params: {
 				action: 'customerSaleRanking',
 				user_id: localStorage.user_id,
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+				corp_id: localStorage.corp_id
 			},
 
 			callback: function(err, flag, message1, message2) {
@@ -245,7 +245,7 @@
 			params: {
 				action: 'customerBilvRanking',
 				user_id: localStorage.user_id,
-				corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+				corp_id: localStorage.corp_id
 			},
 			callback: function(err, flag, message1, message2) {
 				var store = this.getStore();

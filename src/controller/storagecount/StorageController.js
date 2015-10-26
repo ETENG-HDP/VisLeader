@@ -35,7 +35,7 @@
         startnum: null,
         rows: null,
         user_id: localStorage.user_id,
-        corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+        corp_id: localStorage.corp_id
       },
       callback: function(err, flag, message) {
         if(err != null) {
@@ -96,7 +96,7 @@
   			startnum: length,
   			rows: 15,
         user_id: localStorage.user_id,
-  			corp_id: bcpConfig.appcorpid || 'wuzoufen-f76b-4437-a3bd-9f1ab1343dfc'
+  			corp_id: localStorage.corp_id
   		},
   		callback: function(err, flag, message) {
         var store = Ext.StoreMgr.lookup('recipeallstore');
@@ -136,7 +136,7 @@
       params: {
         keys: Ext.encode(proids),
         //groups: Ext.encode("bcpgroup"),
-        groups: Ext.endcode('stockgroups:'+(localStorage.corp_id||bcpConfig.appcorpid)),
+        groups: Ext.endcode('stockgroups:'+(localStorage.corp_id)),
         user_id: Ext.encode(localStorage.user_id)
       },
       callback: function(err, flag, args) {

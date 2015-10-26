@@ -119,7 +119,7 @@
 			bo: 'et.bcp.leader.Region.RegionBO',
 			params: {
 				action: 'query',
-				user_corp_id: bcpConfig.appcorpid //应用的id,不同公司不同,对应公司的corp_id,测试公司0002
+				user_corp_id: localStorage.corp_id //应用的id,不同公司不同,对应公司的corp_id,测试公司0002
 			},
 			callback: function(err, flag, message) {
 				console.log(arguments);
@@ -142,7 +142,7 @@
 			bo: 'et.bcp.leader.Region.RegionBO',
 			params: {
 				action: 'save_re_user_reg',
-				user_corp_id: bcpConfig.appcorpid,
+				user_corp_id: localStorage.corp_id,
 				user_id: localStorage.user_id,
 				reg_id: record.getData().region_id
 			},
@@ -171,7 +171,7 @@
 			bo: 'et.bcp.leader.Region.RegionBO',
 			params: {
 				action: 'query',
-				user_corp_id: bcpConfig.appcorpid //应用的id,不同公司不同,对应公司的corp_id,测试公司0002
+				user_corp_id: localStorage.corp_id //应用的id,不同公司不同,对应公司的corp_id,测试公司0002
 			},
 			callback: function(err, flag, message) {
 				console.log(message);
